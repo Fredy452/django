@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} random_word {% endblock %}
+
+{% block content %}
+
+
+<div class="row justify-content-center align-items-center">
+    <div class="col-md-4">
+        <h3>Random Word  #<span class="text-info"></span>{{ contador }}</h3>
+        <div class="card shadow p-4">
+            <div class="card-title">
+                <h3 class="text-align-center">{{ word }}</h3>
+            </div>
+        </div>
+        <form action="/word" method="post" >
+            {% csrf_token %}
+                <button class="btn btn-success mt-2" type="submit">Generar</button>
+                <a href="/reset" class="btn btn-danger">Reset</a>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

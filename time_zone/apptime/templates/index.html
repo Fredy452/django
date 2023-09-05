@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} App time zone {% endblock %}
+
+{% block content %}
+    <h4 style="text-align: center;">La hora es</h4>
+    <div class="col">
+        <div class="card shadow p-4">
+            <div class="card-title">
+                <h3 id="hora" style="text-align: center;">{{ time }}</h3>
+            </div>
+        </div>
+    </div>
+    <!-- <script>
+        setInterval("location.reload()",1000);
+    </script> -->
+{% endblock %}

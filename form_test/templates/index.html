@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} App time zone {% endblock %}
+
+{% block content %}
+<!-- <h1>Index Page</h1>
+<h3>Create a User</h3>
+<form class="from-control" action='/users' method='post'>
+    {% csrf_token %}
+    Name: <input class="from-control" type='text' name='name'> <br>
+    Email: <input class="from-control" type='text' name='email'>
+    <button class="btn btn-success" type='submit'>Create User<button>
+</form> -->
+
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-title">
+            <h3>Create User</h3>
+        </div>
+        <div class="card-body">
+            <form action="/users" method="post">
+                 {% csrf_token %}
+                <div class="form-group mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" name="name" id="name" class="form-control">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="email" class="from-label">Email:</label>
+                    <input type="email" name="email" id="email" class="form-control">
+                </div>
+                <button class="btn btn-success " type="submit">Create User</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

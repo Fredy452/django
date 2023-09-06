@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Mostrandoi datos {% endblock %}
+
+{% block content %}
+
+<div class="col-mde-6">
+    <h2>Datos enviados</h2>
+    <p>{{ request.session.name }}</p>
+    <p>{{ request.session.email }}</p>
+    <p>{% request.session.name in request.session %}</p>
+</div>
+
+{% endblock %}

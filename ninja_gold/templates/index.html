@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %} random_word {% endblock %}
+
+{% block content %}
+
+
+<div class="row justify-content-center align-items-center">
+    <div class="row mb-4">
+        <div class="col-sm">
+            <label for="dash" style="font-size: 20px; margin-right: 4px;">Your Gold: </label> <input type="text" value="{{ total }}" disabled name="dash" id="dash">
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center">
+        <div class="col shadow rounted-4 p-4 m-2 d-flex flex-column align-items-center justify-content-center">
+            <h3>Farm</h3>
+            <p>(earns 10-20 golds)</p>
+            <a class="btn btn-success" href="/process_money/farm">Find Gold!</a>
+        </div>
+
+        <div class="col shadow rounted-4 p-4 m-2 d-flex flex-column align-items-center justify-content-center">
+            <h3>Cave</h3>
+            <p>(earns 5-10 golds)</p>
+            <a class="btn btn-success" href="/process_money/cave">Find Gold!</a>
+        </div>
+
+        <div class="col shadow rounted-4 p-4 m-2 d-flex flex-column align-items-center justify-content-center">
+            <h3>House</h3>
+            <p>(earns 2-5 golds)</p>
+            <a class="btn btn-success" href="/process_money/house">Find Gold!</a>
+        </div>
+
+        <div class="col shadow rounted p-4 m-2 d-flex flex-column align-items-center justify-content-center">
+            <h3>Casino</h3>
+            <p>(earns or los -50 +50 golds)</p>
+            <a class="btn btn-success" href="/process_money/casino">Find Gold!</a>
+        </div>
+    </div>
+
+    <!-- Activities -->
+    <div class="row mt-4">
+        <h5>Activities</h5>
+        <div class="row notifications-content p-2" style=" border: 2px solid grey; max-height: 200px; overflow-y: auto;">
+            {% for message in messages %}
+                <p style="margin: 0px;">
+                    <span class="{{ info }}">{{ message }}</span>
+                </p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
